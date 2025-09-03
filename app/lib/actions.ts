@@ -19,5 +19,6 @@ export async function createCard(cardData: FormData) {
 
   const date = new Date().toISOString().split('T')[0];
 
+  // Need to connect to a DB using typegoose.
   try { } catch (error) { }
 }

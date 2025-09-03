@@ -6,7 +6,7 @@ export default function Page() {
       <main>
         <h1>Home Page</h1>
         <div>
-          <Card />
+          
         </div>
       </main>
     </div>

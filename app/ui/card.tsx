@@ -1,17 +1,14 @@
-import { fetchCardData } from '@/app/lib/data'
-
-export async function Card() {
-  const {
-    cardBody,
-    status,
-    date,
-  } = await fetchCardData();
+export async function Card(cardData: {
+  cardBody: string,
+  status: string,
+  date: string
+}) {
 
   return (
     <article>
-      <p>{cardBody}</p>
-      <div>{status}</div>
-      <div>{date}</div>
+      <p>{cardData.cardBody}</p>
+      <div>{cardData.status}</div>
+      <div>{cardData.date}</div>
     </article>
   )
 }
