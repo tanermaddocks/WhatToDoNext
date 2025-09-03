@@ -7,6 +7,8 @@ Hyper simplified task management application with following features:
 ## Action cards
 One shared base design between all the cards, three states modified based on column placed in.
 
+Users will have a list of cards assigned to them and those cards will appear when they log in. When a user creates a new card, that card's id will be added to their user data.
+
 
 ## User story
 1. Navigate to login page and enter details
