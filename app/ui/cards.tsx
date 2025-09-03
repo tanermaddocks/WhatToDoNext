@@ -4,14 +4,16 @@ import { fetchUsersCards } from '@/app/lib/data'
 export default function Cards() {
   const cards: any = fetchUsersCards();
 
+  interface cardProps {
+    id: string;
+    cardBody: string;
+    status: string;
+    date: string;
+  }
+
   return (
     <div className='CardWrapper'>
-      {cards.map(((card: {
-        id: string,
-        cardBody: string,
-        status: string,
-        date: string,
-      }) => {
+      {cards.map(((card: cardProps) => {
         return (
           <article key={card.id}>
             <p>{card.cardBody}</p>
