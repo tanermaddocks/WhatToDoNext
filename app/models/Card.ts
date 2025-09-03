@@ -15,7 +15,7 @@ enum Status {
   }
 })
 
-class Card {
+export class Card {
   @prop({
     required: true,
     trim: true,
