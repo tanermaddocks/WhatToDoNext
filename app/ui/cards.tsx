@@ -8,7 +8,7 @@ export default function Cards() {
     id: string;
     cardBody: string;
     status: string;
-    date: string;
+    dueDate: string;
   }
 
   return (
@@ -18,7 +18,7 @@ export default function Cards() {
           <article key={card.id}>
             <p>{card.cardBody}</p>
             <div>{card.status}</div>
-            <div>{card.date}</div>
+            <div>{card.dueDate}</div>
           </article>
         )
       }))}

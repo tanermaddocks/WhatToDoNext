@@ -3,25 +3,25 @@ const cards = [
     id: "c0",
     cardBody: "Do the dishes",
     status: "doing",
-    date: "2025-09-03"
+    dueDate: "2025-09-03"
   },
   {
     id: "c1",
     cardBody: "Fold the laundry",
     status: "to-do",
-    date: "2025-09-03"
+    dueDate: "2025-09-03"
   },
   {
     id: "c2",
     cardBody: "Submit your assignment",
     status: "done",
-    date: "2025-09-03"
+    dueDate: "2025-09-03"
   },
   {
     id: "c3",
     cardBody: "Wash the car",
     status: "doing",
-    date: "2025-09-02"
+    dueDate: "2025-09-02"
   },
 ];
 
