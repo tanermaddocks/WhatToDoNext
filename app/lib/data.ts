@@ -1,17 +1,9 @@
 import { cards, users } from '@/app/lib/sample-data'
 
-export async function fetchAllUsersCards() {
+export function fetchUsersCards() {
   try {
-
-    // Sample data retrieval
-    const userCardsIds = users[0].card_ids
-    const userCards: any[] = []
-
-    cards.forEach(card => {
-      if (card.id in userCardsIds) {
-        userCards.push(card)
-      }
-    });
+    // Sample data retrieval of username-0's cards.
+    const userCards = users[0].cards
 
     return userCards
   } catch (error) {

@@ -30,18 +30,18 @@ const users = [
     id: "u0",
     username: "username-0",
     password: "password",
-    card_ids: [
-      cards[0].id,
-      cards[1].id,
-      cards[2].id,
+    cards: [
+      cards[0],
+      cards[1],
+      cards[2],
     ]
   },
   {
     id: "u1",
     username: "username-1",
     password: "password",
-    card_ids: [
-      cards[3].id,
+    cards: [
+      cards[3],
     ]
   }
 ];
