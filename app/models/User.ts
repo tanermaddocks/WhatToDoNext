@@ -1,6 +1,11 @@
 import { getModelForClass, modelOptions, prop, Severity } from '@typegoose/typegoose';
 import { Card } from '@/app/models/Card'
 
+export interface UserProps {
+  id: string,
+  username: string,
+}
+
 @modelOptions({
   schemaOptions: {
     timestamps: true,

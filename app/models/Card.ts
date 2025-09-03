@@ -1,5 +1,12 @@
 import { getModelForClass, modelOptions, prop, Severity } from '@typegoose/typegoose';
 
+export interface cardProps {
+  id: string;
+  cardBody: string;
+  status: string;
+  dueDate: string;
+}
+
 enum Status {
   TODO = 'to-do',
   DOING = 'doing',

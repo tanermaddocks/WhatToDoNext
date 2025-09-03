@@ -1,15 +1,9 @@
 import { fetchUsersCards } from '@/app/lib/data'
+import { cardProps } from '@/app/models/Card';
 
 
 export default function Cards() {
   const cards: any = fetchUsersCards();
-
-  interface cardProps {
-    id: string;
-    cardBody: string;
-    status: string;
-    dueDate: string;
-  }
 
   return (
     <div className='CardWrapper'>
