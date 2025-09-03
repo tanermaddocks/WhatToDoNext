@@ -1,13 +1,13 @@
 export async function fetchCardData() {
   try {
-    const cardTitle = 'example-title'
     const cardBody = 'example-description'
-    const status = ''
+    const status = 'doing'
+    const date = "2022-12-23"
 
     return {
-      cardTitle,
       cardBody,
       status,
+      date,
     }
   } catch (error) {
     throw new Error()
