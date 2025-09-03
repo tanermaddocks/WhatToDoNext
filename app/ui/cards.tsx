@@ -7,12 +7,13 @@ export default function Cards() {
   return (
     <div className='CardWrapper'>
       {cards.map(((card: {
+        id: string,
         cardBody: string,
         status: string,
         date: string,
       }) => {
         return (
-          <article>
+          <article key={card.id}>
             <p>{card.cardBody}</p>
             <div>{card.status}</div>
             <div>{card.date}</div>

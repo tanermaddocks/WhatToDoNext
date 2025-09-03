@@ -1,5 +1,4 @@
 import Cards from "@/app/ui/cards";
-import { cards } from "../lib/sample-data";
 
 export default async function Page() {
 
