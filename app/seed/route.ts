@@ -7,6 +7,15 @@ export async function seedAdmin() {
   try {
     await connectDB();
 
+    // Check for existing admin
+    const existingAdmin = await UserModel.findOne({ username: "Admin-0" })
+    if (existingAdmin) {
+      return Response.json({
+        success: false,
+        error: 'Admin user already exists'
+      }, { status: 400 })
+    }
+
     const { username, password, cards } = users[0];
 
     const adminUser = await UserModel.create({
