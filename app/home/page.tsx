@@ -1,19 +1,25 @@
+
+'use client';
+
 import Cards from "@/app/ui/cards";
 import { fetchUserHome } from "../lib/data";
+import { useParams } from "next/navigation";
 
 
 
-export default async function Page(props: { params: Promise<{ id: string }> }) {
+export default async function Page() {
 
-  const params = await props.params;
+  const params = useParams<{ id: string }>();
   const id = params.id;
-  const { username, cards } = await fetchUserHome({ id })
 
   if (!id) {
     return (
       <h1>Not logged in</h1>
-    ) 
+    )
   }
+
+  const { username, cards } = await fetchUserHome({ id });
+
   return (
     <div>
       <main>
