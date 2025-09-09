@@ -23,18 +23,12 @@ const cards = [
 
 const users = [
   {
-    username: "username-0",
+    username: "Admin-0",
     password: "password",
     cards: [
       cards[0],
       cards[1],
       cards[2],
-    ]
-  },
-  {
-    username: "username-1",
-    password: "password",
-    cards: [
       cards[3],
     ]
   }
