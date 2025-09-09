@@ -15,7 +15,7 @@ export interface UserProps {
   }
 })
 
-class User {
+export class User {
   @prop({
     required: true,
     unique: true,

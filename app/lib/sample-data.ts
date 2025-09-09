@@ -1,24 +1,20 @@
 const cards = [
   {
-    id: "c0",
     cardBody: "Do the dishes",
     status: "doing",
     dueDate: "2025-09-03"
   },
   {
-    id: "c1",
     cardBody: "Fold the laundry",
     status: "to-do",
     dueDate: "2025-09-03"
   },
   {
-    id: "c2",
     cardBody: "Submit your assignment",
     status: "done",
     dueDate: "2025-09-03"
   },
   {
-    id: "c3",
     cardBody: "Wash the car",
     status: "doing",
     dueDate: "2025-09-02"
@@ -27,7 +23,6 @@ const cards = [
 
 const users = [
   {
-    id: "u0",
     username: "username-0",
     password: "password",
     cards: [
@@ -37,7 +32,6 @@ const users = [
     ]
   },
   {
-    id: "u1",
     username: "username-1",
     password: "password",
     cards: [

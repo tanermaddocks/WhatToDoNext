@@ -1,23 +1,41 @@
 import connectDB from '@/app/lib/mongodb';
 import UserModel from '@/app/models/User';
-import { cardProps } from '@/app/models/Card';
+import mongoose from 'mongoose';
+
+
 // GET all cards from one User
-
-
-
-export async function GetCards(userId: string) {
+export async function GET(
+  request: Request, { params }: { params: { id: string } }
+) {
   try {
     await connectDB();
 
-    const user = await UserModel.findById(userId)
-      .sort({ createdAt: 1 });
-    const cards = user.cards
+    const { id } = params;
 
-    return Response.json({
-      success: true,
-      data: user.cards,
-      count: user.cards.length,
-    });
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return Response.json(
+        { success: false, error: 'Invalid user ID' },
+        { status: 400 }
+      )
+    }
+
+    const user = await UserModel.findById(id).select('-__v')
+    const cards = user?.cards
+
+    if (!cards) {
+      return Response.json({
+        success: true,
+        data: "You're all done!",
+        count: 0,
+      });
+    } else {
+      return Response.json({
+        success: true,
+        data: cards,
+        count: cards.length,
+      });
+    }
+
   } catch (error) {
     console.error('Get /api/cards error: ', error);
     return Response.json(
