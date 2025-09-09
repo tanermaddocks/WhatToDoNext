@@ -14,7 +14,7 @@ export async function fetchUserHome({ id }: { id: string }) {
 
     return data?.data
 
-  } catch (error) {
+  } catch (error) {33
     console.error(error)
   }
 }

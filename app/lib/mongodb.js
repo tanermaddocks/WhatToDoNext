@@ -20,6 +20,7 @@ export default async function connectDB() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+      autoIndex: true,
     };
 
     cached.promise = (await mongoose.connect(MONGODB_URI, opts)).isObjectIdOrHexString((mongoose) => {

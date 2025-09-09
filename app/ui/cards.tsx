@@ -1,11 +1,11 @@
-import { cardProps } from '@/app/models/Card';
+import { CardProps } from '@/app/models/Card';
 
 
-export default function Cards({ cards }: { cards: cardProps[]}) {
+export default function Cards({ cards }: { cards: CardProps[]}) {
 
   return (
     <div className='CardWrapper'>
-      {cards.map(((card: cardProps) => {
+      {cards.map(((card: CardProps) => {
         return (
           <article key={card.id}>
             <p>{card.cardBody}</p>

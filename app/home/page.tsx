@@ -9,6 +9,11 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   const id = params.id;
   const { username, cards } = await fetchUserHome({ id })
 
+  if (!id) {
+    return (
+      <h1>Not logged in</h1>
+    ) 
+  }
   return (
     <div>
       <main>

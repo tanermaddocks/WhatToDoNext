@@ -1,5 +1,6 @@
 import { getModelForClass, modelOptions, prop, Severity } from '@typegoose/typegoose';
 import { Card } from '@/app/models/Card'
+import mongoose from 'mongoose';
 
 export interface UserProps {
   id: string,
@@ -38,5 +39,5 @@ export class User {
   public updatedAt?: Date;
 }
 
-const UserModel = getModelForClass(User);
+const UserModel = mongoose.models.User || getModelForClass(User);
 export default UserModel;

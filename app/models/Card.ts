@@ -1,13 +1,14 @@
 import { getModelForClass, modelOptions, prop, Severity } from '@typegoose/typegoose';
+import mongoose from 'mongoose';
 
-export interface cardProps {
-  id: string;
+export interface CardProps {
+  id?: string;
   cardBody: string;
   status: string;
   dueDate: string;
 }
 
-enum Status {
+export enum Status {
   TODO = 'to-do',
   DOING = 'doing',
   DONE = 'done',
@@ -27,18 +28,22 @@ export class Card {
     required: true,
     trim: true,
   })
-  public cardBody!: string;
+  public cardBody!: String;
 
   @prop({
     required: true,
     enum: Status,
   })
-  public status!: string;
+  public status!: String;
 
-  public dueDate?: Date;
+  @prop({
+    required: true,
+  })
+  public dueDate!: String;
+
   public createdAt?: Date;
   public updatedAt?: Date;
 }
 
-const CardModel = getModelForClass(Card);
+const CardModel = mongoose.models.Card || getModelForClass(Card);
 export default CardModel;

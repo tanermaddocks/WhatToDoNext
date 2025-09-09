@@ -1,6 +1,6 @@
 import connectDB from "@/app/lib/mongodb";
 import UserModel, { User } from "@/app/models/User";
-import CardModel, { cardProps } from "@/app/models/Card";
+import CardModel from "@/app/models/Card";
 import mongoose from "mongoose";
 
 // GET api/users/[id] -  get all cards from one User
