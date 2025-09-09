@@ -1,9 +1,7 @@
-import { fetchUsersCards } from '@/app/lib/data'
 import { cardProps } from '@/app/models/Card';
 
 
-export default function Cards() {
-  const cards: any = fetchUsersCards();
+export default function Cards({ cards }: { cards: cardProps[]}) {
 
   return (
     <div className='CardWrapper'>
@@ -11,8 +9,8 @@ export default function Cards() {
         return (
           <article key={card.id}>
             <p>{card.cardBody}</p>
-            <div>{card.status}</div>
-            <div>{card.dueDate}</div>
+            <p>{card.status} -- {card.dueDate}</p>
+            <div></div>
           </article>
         )
       }))}

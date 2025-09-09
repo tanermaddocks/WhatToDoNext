@@ -1,5 +1,5 @@
 import connectDB from "../lib/mongodb";
-import { users } from "../lib/sample-data";
+import users from "../lib/sample-data";
 import UserModel from "../models/User";
 
 

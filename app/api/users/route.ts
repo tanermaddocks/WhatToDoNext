@@ -26,15 +26,15 @@ export async function GET(
     if (!cards) {
       return Response.json({
         success: true,
-        data: username ,
-        message: "You're all done!"
-      });
+        data: username,
+        count: 0,
+      }, { status: 200 });
     } else {
       return Response.json({
         success: true,
         data: { username, cards },
         count: cards.length,
-      });
+      }, { status: 200 });
     }
 
   } catch (error) {

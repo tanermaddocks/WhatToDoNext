@@ -1,11 +1,19 @@
-import { cards, users } from '@/app/lib/sample-data'
 
-export function fetchUsersCards() {
+let url = process.env.WEBSITE_URL + "api/"
+
+export interface ApiResponse {
+  success: boolean,
+  data?: any,
+  error?: any,
+  count?: number,
+}
+
+export async function fetchUserHome({ id }: { id: string }) {
   try {
-    // Sample data retrieval of username-0's cards.
-    const userCards = users[0].cards
+    let data: ApiResponse = await fetch(url + "users/" + id)
 
-    return userCards
+    return data?.data
+
   } catch (error) {
     console.error(error)
   }
