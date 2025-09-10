@@ -1,26 +1,16 @@
 import connectDB from "@/app/lib/mongodb";
-import defaultAdmin from "@/app/lib/sample-data";
 import UserModel from "@/app/models/User";
-import CardModel from "@/app/models/Card";
-
 
 export async function POST(request: Request) {
   try {
     await connectDB();
 
-    const { username, password, cards: unmodeledCards  } = defaultAdmin;
-
-    const card0 = await CardModel.create(unmodeledCards[0]);
-    const card1 = await CardModel.create(unmodeledCards[1]);
-    const card2 = await CardModel.create(unmodeledCards[2]);
-    const card3 = await CardModel.create(unmodeledCards[3]);
-
-    const cards = [card0, card1, card2, card3];
+    const username = process.env.ADMIN_USERNAME
+    const password = process.env.ADMIN_PASSWORD
 
     const adminUser = await UserModel.create({
       username,
       password,
-      cards,
     });
 
     return Response.json({

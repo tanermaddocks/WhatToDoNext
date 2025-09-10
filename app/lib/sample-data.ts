@@ -1,5 +1,5 @@
-const defaultAdmin = {
-  username: "Admin-0",
+const sampleUser = {
+  username: "username-0",
   password: "password",
   cards: [
     {
@@ -25,5 +25,5 @@ const defaultAdmin = {
   ]
 }
 
-export default defaultAdmin;
+export default sampleUser;
 
