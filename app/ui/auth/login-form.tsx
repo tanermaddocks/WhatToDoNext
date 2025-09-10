@@ -1,7 +1,8 @@
-import Button from '@/app/ui/button';
+// Login Form
 
 export default function LoginForm() {
   return (
+    <section>
     <form>
       <label htmlFor="username">Username</label>
       <input
@@ -20,9 +21,11 @@ export default function LoginForm() {
         required
         minLength={6}
       />
-      <Button type="submit">
+      <button type="submit">
         <div>Login</div>
-      </Button>
+      </button>
     </form>
+    {/* ADD LINK TO SIGNUP */}
+    </section>
   )
 }
