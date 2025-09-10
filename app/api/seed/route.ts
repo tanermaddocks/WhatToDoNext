@@ -15,7 +15,10 @@ export async function POST(request: Request) {
 
     return Response.json({
       success: true,
-      data: adminUser,
+      data: {
+        id: adminUser.id,
+        username: adminUser.username,
+      },
       message: 'Admin seeded successfully.',
     }, { status: 201 });
 

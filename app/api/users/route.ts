@@ -75,7 +75,11 @@ export async function POST(request: Request) {
 
     return Response.json({
       success: true,
-      data: user,
+      data: {
+        id: user.id,
+        username: user.username,
+        cards: user.cards,
+      },
       message: 'User created successfully'
     }, { status: 201 });
 
