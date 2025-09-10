@@ -26,7 +26,7 @@ export class User {
 
   @prop({
     required: true,
-    select: false,
+    // select: false, // NEED TO UNCOMMENT WHEN VALIDATION IS SETUP
   })
   // private password!: string;
   public password!: string;

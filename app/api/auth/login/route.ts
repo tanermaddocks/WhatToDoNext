@@ -19,14 +19,12 @@ export async function POST(request: Request) {
 
     const user = await UserModel.findOne({ username: username });
 
-    
-
-    // if (user.password != password) {
-    //   return Response.json(
-    //     { success: false, error: 'Incorrect password.' },
-    //     { status: 401 }
-    //   );
-    // }
+    if (!user || user.password != password) { // REPLACE WITH APPROPRIATE PASSWORD VALIDATION
+      return Response.json(
+        { success: false, error: 'Incorrect username or password.' },
+        { status: 401 }
+      );
+    }
 
     return Response.json(
       {
@@ -43,8 +41,6 @@ export async function POST(request: Request) {
 
   } catch (error) {
     // User not found error
-
-    console.error(error);
 
     // // All other errors
     return Response.json(
