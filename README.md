@@ -25,3 +25,6 @@ Users will have a list of cards assigned to them and those cards will appear whe
 - Login with wallet (Labrys specific).
 - Interaction with other users.
 - Adding comments to cards.
+
+## SETUP
+A developer or admin user will need to create env variable that includes ADMIN username and password and mongoDB url.
